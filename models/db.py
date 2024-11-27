@@ -1,7 +1,7 @@
 from motor.motor_asyncio import AsyncIOMotorClient
-import os
+from utils.secrets import MONGO_URL
 
-db = os.getenv("MONGO_URL")
+db = MONGO_URL
 if db is None:
     raise Exception("URL Not Found")
 

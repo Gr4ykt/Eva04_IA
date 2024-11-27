@@ -15,6 +15,7 @@ import logging
 
 router = APIRouter()
 
+# Buscar optimizaciones de codigo en el enpoint de registro
 @router.post("/register_user")
 async def register_user(register_user_data: UserRegister, start_session_db = Depends(start_db)):
     hashed_pwd = get_password_hash(register_user_data.hashed_password).decode('utf-8')
@@ -74,3 +75,4 @@ async def me_detail(
     token: Token = Depends(get_token)
 ):
     return current_user
+
